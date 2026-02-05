@@ -1,0 +1,3 @@
+### GETT request to get all patients
+
+GET http://localhost:4000/users
