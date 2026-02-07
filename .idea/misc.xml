@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/test-module2/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/gate/pom.xml" />
+        <option value="$PROJECT_DIR$/auth-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
