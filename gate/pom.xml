@@ -16,11 +16,8 @@
     </parent>
 
     <groupId>com.pm</groupId>
-    <artifactId>api-gateway</artifactId>
+    <artifactId>gate</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-
-
-
 
 
 

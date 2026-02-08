@@ -5,23 +5,38 @@ spring:
   cloud:
     gateway:
       routes:
-
-        - id: user-service-route
-          uri: http://localhost:4000
+        - id: auth-service-route
+          uri: http://authentication-service:4005
           predicates:
-            - Path=/api/users/**
+            - Path=/auth/**
           filters:
             - StripPrefix=1
 
 
 
+        - id: user-service-route
+          uri: http://user-service:4000
+          predicates:
+            - Path=/api/users/**
+          filters:
+            - StripPrefix=1
+            - JwtValidation
+
+
         - id: api-docs-user-route
-          uri: http://localhost:4000
+          uri: http://user-service:4000
           predicates:
             - Path=/api-docs/users
           filters:
             - RewritePath=/api-docs/users,/v3/api-docs
 
+
+        - id: api-docs-auth-route
+          uri: http://authentication-service:4005
+          predicates:
+            - Path=/api-docs/auth
+          filters:
+            - RewritePath=/api-docs/auth,/v3/api-docs
 
 
 
